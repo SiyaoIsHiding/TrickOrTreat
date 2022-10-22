@@ -7,6 +7,7 @@ using Random = System.Random;
 public class KidsController : MonoBehaviour
 {
     public GameObject[] AllKidsPool;
+    public GameObject[] KidsAlive;
     static public Kid[] WhoAreComing()
     {
         // return an array of kids. You can access the ShownUp and NumCandiesHolding of each kid.
@@ -28,7 +29,27 @@ public class KidsController : MonoBehaviour
 
     void Start()
     {
-        Instantiate(AllKidsPool[0], this.transform);
+        instantiateKids(chooseKidsComing());
     }
-  
+
+    void Update()
+    {
+
+    }
+
+    private GameObject[] chooseKidsComing()
+    {
+        // Implement later
+        return new GameObject[] { AllKidsPool[0] };
+    }
+
+    private void instantiateKids(GameObject[] kidsToSpawn)
+    {
+        foreach (var kid in kidsToSpawn)
+        {
+            Instantiate(kid, this.transform);
+        }
+
+        KidsAlive = kidsToSpawn;
+    }
 }
