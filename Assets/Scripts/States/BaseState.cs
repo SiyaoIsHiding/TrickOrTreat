@@ -9,7 +9,9 @@ public class BaseState
     public enum STATE
     {
         APPROACH,
-        LEAVE
+        TAKECANDY,
+        LEAVE,
+        ESCAPE
     }
 
     public enum EVENT

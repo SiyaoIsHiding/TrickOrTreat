@@ -10,6 +10,9 @@ public sealed class Singleton
     // Not important parameters in BaseState.cs
     public readonly Vector2 ApproachingSpeed = new Vector2(2.0f, 0.0f);
     public readonly Vector2 LeavingSpeed = new Vector2(-2.0f, 0.0f);
+    public readonly Vector2 EscapingSpeed = new Vector2(-4.0f, 0f);
+    public readonly float timeTakingCandy = 1.0f;
+    public readonly float timeLeaving = 3.0f;
 
     private Singleton()
     {
