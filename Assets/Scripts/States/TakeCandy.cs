@@ -5,9 +5,10 @@ using UnityEngine.PlayerLoop;
 
 public class TakeCandy : BaseState
 {
+    private bool takingMore;
     private float timeInterval;
-    private float[] timeIntervalShake = Singleton.Instance.timeIntervalShakeTaking1;
-    private int[] shakeDirections = Singleton.Instance.shakeDirectionsTaking1;
+    private float[] timeIntervalShake;
+    private int[] shakeDirections;
     public TakeCandy(GameObject _kid, Rigidbody2D _rb) : base(_kid, _rb)
     {
         currState = STATE.TAKECANDY;
@@ -15,6 +16,18 @@ public class TakeCandy : BaseState
 
     public override void Enter()
     {
+        takingMore = true; //TODO: set taking more
+
+        if (!takingMore)
+        {
+            timeIntervalShake = Singleton.Instance.timeIntervalShakeTaking1;
+            shakeDirections = Singleton.Instance.shakeDirectionsTaking1;
+        }
+        else
+        {
+            timeIntervalShake = Singleton.Instance.timeIntervalShakeTakingMore;
+            shakeDirections = Singleton.Instance.shakeDirectionsTakingMore;
+        }
         timeInterval = 0f;
         rb.velocity = Vector2.zero;
         kid.transform.rotation = Quaternion.identity;

@@ -14,7 +14,7 @@ public class Approach : BaseState
     public override void Enter()
     {
         rb.velocity = Singleton.Instance.ApproachingSpeed;
-        kid.transform.rotation = Quaternion.identity;
+        kid.transform.rotation = Singleton.Instance.turnLeft;
         timeIntervalShake = 0;
         turnRight = false;
         base.Enter();
