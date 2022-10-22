@@ -5,11 +5,11 @@ using UnityEngine;
 public class Kid
 {
     public bool ShownUp;
-    public bool Sprayed;
+    private bool sprayed;
 
     public Kid()
     {
         ShownUp = false;
-        Sprayed = false;
+        sprayed = false;
     }
 }

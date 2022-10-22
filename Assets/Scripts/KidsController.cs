@@ -5,7 +5,7 @@ using Random = System.Random;
 
 public class KidsController
 {
-    public Kid[] WhoAreComing()
+    static public Kid[] WhoAreComing()
     {
         Kid[] kids = new Kid[] { new Kid() };
         Random rdm = new Random();
@@ -16,5 +16,10 @@ public class KidsController
         }
 
         return kids;
+    }
+
+    static public void Spray()
+    {
+        
     }
 }
