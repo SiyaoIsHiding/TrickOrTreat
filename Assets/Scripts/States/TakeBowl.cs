@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Not implemented yet
 public class TakeBowl : MonoBehaviour
 {
     // Start is called before the first frame update
