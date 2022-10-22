@@ -23,7 +23,7 @@ public class Approach : BaseState
         if (hit)
         {
             Debug.Log("Hit");
-            nextState = new Leave(kid, rb);
+            nextState = new TakeCandy(kid, rb);
             stage = EVENT.EXIT;
         }
             
