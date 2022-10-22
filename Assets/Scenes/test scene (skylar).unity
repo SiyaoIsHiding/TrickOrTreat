@@ -695,8 +695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 52dffb483f70e5349b77da8d5e3bda9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 1200535583}
-  spraySprite: {fileID: 21300000, guid: d729e01cb7dcc3c47b65c0a6dee19eb0, type: 3}
+  sprayEffect: {fileID: 614912019}
   animator: {fileID: 1200535585}
 --- !u!1 &1906364410
 GameObject:
