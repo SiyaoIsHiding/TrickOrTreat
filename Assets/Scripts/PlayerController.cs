@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public GameObject sprayEffect;
+    public Animator animator;
+
+    private void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            StartCoroutine(SprayChild());
+        }
+    }
+
+    IEnumerator SprayChild()
+    {
+        animator.SetBool("spraying", true);
+        sprayEffect.SetActive(true);
+
+
+        yield return new WaitForSeconds(1);
+
+        animator.SetBool("spraying", false);
+        sprayEffect.SetActive(false);
     }
 }
