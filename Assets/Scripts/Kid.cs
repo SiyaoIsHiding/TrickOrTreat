@@ -5,13 +5,12 @@ using UnityEngine;
 public class Kid
 {
     public bool ShownUp;
-    private bool sprayed;
-    public int NumCandiesHolding;
+    public bool Sprayed;
 
     public Kid()
     {
         ShownUp = false;
-        sprayed = false;
-        NumCandiesHolding = 0;
+        Sprayed = false;
+
     }
 }
