@@ -84,4 +84,4 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 3664cde4ae2ad48d0915d56122320fd7, type: 3}
   - {fileID: 21300000, guid: 3e11795f1f21a416ba9b30c78b6a0827, type: 3}
   - {fileID: 21300000, guid: 9bccd719ac8964b67b1920adf0a2b1e9, type: 3}
-  KidsAlive: []
+  KidsAliveIndex: 
