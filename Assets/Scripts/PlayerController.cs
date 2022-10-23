@@ -29,8 +29,7 @@ public class PlayerController : MonoBehaviour
         sprayEffect.SetActive(true);
 
         //testing for now
-        scoreboard.DecreaseCandyCounter(5);
-
+        //scoreboard.DecreaseCandyCounter(5);
 
         yield return new WaitForSeconds(sprayTime);
 
