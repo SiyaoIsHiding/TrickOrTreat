@@ -5,11 +5,14 @@ using TMPro;
 
 public class ScoreBoard : MonoBehaviour
 {
-    [SerializeField]
-    public int happyKidCounter;
 
-    [SerializeField]
+    [Header("Starting Values")]
+
+    public int happyKidCounter;
     public int candyCounter;
+    [Space(10)]
+
+    [Header("UI Text Boxes")]
 
     public TextMeshProUGUI kidCountText;
     public TextMeshProUGUI candyCountText;
@@ -17,6 +20,7 @@ public class ScoreBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         kidCountText.text = "Happy Kid Counter: " + happyKidCounter.ToString();
         candyCountText.text = "Candies: " + candyCounter.ToString();
     }
@@ -28,7 +32,7 @@ public class ScoreBoard : MonoBehaviour
     }
 
     public int GetKidCounter(){
-return happyKidCounter;
+        return happyKidCounter;
     }
     public int GetCandyCounter(){
         return candyCounter;
