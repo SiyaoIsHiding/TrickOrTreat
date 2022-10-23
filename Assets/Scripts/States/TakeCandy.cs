@@ -12,8 +12,16 @@ public class TakeCandy : BaseState
     {
         currState = STATE.TAKECANDY;
         // TODO: Set 1 or More
-        timeIntervalShake = Singleton.Instance.TimeIntervalShakeTakingMore;
-        shakeDirections = Singleton.Instance.ShakeDirectionsTakingMore;
+        if (associatedKid.NumCandyHolding == 1)
+        {
+            timeIntervalShake = Singleton.Instance.TimeIntervalShakeTaking1;
+            shakeDirections = Singleton.Instance.ShakeDirectionsTaking1;
+        }
+        else
+        {
+            timeIntervalShake = Singleton.Instance.TimeIntervalShakeTakingMore;
+            shakeDirections = Singleton.Instance.ShakeDirectionsTakingMore;
+        }
     }
 
     public override void Enter()

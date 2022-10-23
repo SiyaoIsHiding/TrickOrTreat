@@ -21,46 +21,11 @@ public class KidsController : MonoBehaviour
 
     static public Kid[] WhoAreComing()
     {
-        // return an array of kids. You can access the ShownUp and NumCandiesHolding of each kid.
-        Kid[] kids = new Kid[] { new Kid(0) };
-        Random rdm = new Random();
-        float i = rdm.Next(1);
-        if (i < 0.5)
-        {
-            kids[0].ShownUp = true;
-        }
-
-        return kids;
+        // will return only one now
+        Kid kid = KidStore.allKids[instance.KidsAliveIndex[0]];
+        return new Kid[] {kid};
     }
 
-    public int candyChanged()
-    {
-        // called when a player sprays
-        Kid[] kidsComing = WhoAreComing();
-        bool succeed = false;
-        foreach (Kid kid in kidsComing)
-        {
-            if (kid.ShownUp)
-            {
-                succeed = true;
-                break;
-            }
-
-            if (kid.NumCandyHolding > 1)
-            {
-                succeed = true;
-            }
-        }
-
-        if (succeed)
-        {
-            return 0;
-        }
-        else
-        {
-            return -5;
-        }
-    }
 
     static public void Spray()
     {
