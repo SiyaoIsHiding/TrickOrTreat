@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
 
     public GameObject sprayEffect;
     public Animator animator;
+
+    public float sprayTime;
     
     void Update()
     {
@@ -23,7 +25,7 @@ public class PlayerController : MonoBehaviour
         sprayEffect.SetActive(true);
 
 
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(sprayTime);
 
         animator.SetBool("spraying", false);
         sprayEffect.SetActive(false);
