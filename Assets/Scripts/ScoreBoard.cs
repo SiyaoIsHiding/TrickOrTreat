@@ -8,10 +8,7 @@ public class ScoreBoard : MonoBehaviour
 
     [Header("Starting Values")]
 
-    [SerializeField]
     public int happyKidCounter;
-
-    [SerializeField]
     public int candyCounter;
     [Space(10)]
 
@@ -23,6 +20,7 @@ public class ScoreBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         kidCountText.text = "Happy Kid Counter: " + happyKidCounter.ToString();
         candyCountText.text = "Candies: " + candyCounter.ToString();
     }
@@ -34,7 +32,7 @@ public class ScoreBoard : MonoBehaviour
     }
 
     public int GetKidCounter(){
-return happyKidCounter;
+        return happyKidCounter;
     }
     public int GetCandyCounter(){
         return candyCounter;
