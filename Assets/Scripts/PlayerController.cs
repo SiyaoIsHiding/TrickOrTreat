@@ -7,17 +7,13 @@ public class PlayerController : MonoBehaviour
 
     public GameObject sprayEffect;
     public Animator animator;
-
-    private void Start()
-    {
-        
-    }
     
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(SprayChild());
+            KidsController.Spray();
         }
     }
 
