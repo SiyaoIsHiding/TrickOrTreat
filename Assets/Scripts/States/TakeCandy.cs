@@ -12,8 +12,8 @@ public class TakeCandy : BaseState
     {
         currState = STATE.TAKECANDY;
         // TODO: Set 1 or More
-        timeIntervalShake = Singleton.Instance.timeIntervalShakeTakingMore;
-        shakeDirections = Singleton.Instance.shakeDirectionsTakingMore;
+        timeIntervalShake = Singleton.Instance.TimeIntervalShakeTakingMore;
+        shakeDirections = Singleton.Instance.ShakeDirectionsTakingMore;
     }
 
     public override void Enter()
@@ -39,13 +39,13 @@ public class TakeCandy : BaseState
         switch (shakeDirections[step])
         {
             case 1:
-                kid.transform.rotation = Singleton.Instance.turnRight;
+                kid.transform.rotation = Singleton.Instance.TurnRight;
                 break;
             case 0:
                 kid.transform.rotation = Quaternion.identity;
                 break;
             case -1:
-                kid.transform.rotation = Singleton.Instance.turnLeft;
+                kid.transform.rotation = Singleton.Instance.TurnLeft;
                 break;
         }
         
@@ -57,7 +57,7 @@ public class TakeCandy : BaseState
         timeInterval += Time.deltaTime;
         shakingHandler();
         // to exit
-        if (timeInterval >= Singleton.Instance.timeTakingCandy)
+        if (timeInterval >= Singleton.Instance.TimeTakingCandy)
         {
             nextState = new Leave(kid, rb);
             stage = EVENT.EXIT;

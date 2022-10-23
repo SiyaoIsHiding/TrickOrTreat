@@ -15,7 +15,7 @@ public class KidMovement : MonoBehaviour
     {
         state = new Approach(gameObject, rb);
     }
-
+    
     // Update is called once per frame
     void Update()
     {

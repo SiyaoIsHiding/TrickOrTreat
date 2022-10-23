@@ -23,16 +23,16 @@ public class Approach : BaseState
     public override void Update()
     {
         timeIntervalShake += Time.deltaTime;
-        if (turnRight && timeIntervalShake >= Singleton.Instance.timeToShakeAppraoching)
+        if (turnRight && timeIntervalShake >= Singleton.Instance.TimeToShakeAppraoching)
         {
             turnRight = false;
-            kid.transform.rotation = Singleton.Instance.turnLeft;
+            kid.transform.rotation = Singleton.Instance.TurnLeft;
             timeIntervalShake = 0;
         }
-        else if (!turnRight && timeIntervalShake >= Singleton.Instance.timeToShakeAppraoching)
+        else if (!turnRight && timeIntervalShake >= Singleton.Instance.TimeToShakeAppraoching)
         {
             turnRight = true;
-            kid.transform.rotation = Singleton.Instance.turnRight;
+            kid.transform.rotation = Singleton.Instance.TurnRight;
             timeIntervalShake = 0;
         }
         

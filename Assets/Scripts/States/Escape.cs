@@ -14,7 +14,7 @@ public class Escape : BaseState
     public override void Enter()
     {
         rb.velocity = Singleton.Instance.EscapingSpeed;
-        kid.transform.rotation = Singleton.Instance.turnRight;
+        kid.transform.rotation = Singleton.Instance.TurnRight;
         base.Enter();
     }
 
@@ -22,6 +22,7 @@ public class Escape : BaseState
     {
         if (!rd.isVisible)
         {
+            KidsController.KidInvisible(kid);
             Object.Destroy(kid);
         }
         base.Update();

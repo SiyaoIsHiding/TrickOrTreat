@@ -18,7 +18,7 @@ public class Leave : BaseState
         timeInterval = 0f;
         timeIntervalShake = 0f;
         turnRight = false;
-        kid.transform.rotation = Singleton.Instance.turnLeft;
+        kid.transform.rotation = Singleton.Instance.TurnLeft;
         rb.velocity = Singleton.Instance.LeavingSpeed;
         base.Enter();
     }
@@ -27,21 +27,21 @@ public class Leave : BaseState
     {
         timeInterval += Time.deltaTime;
         timeIntervalShake += Time.deltaTime;
-        if (turnRight && timeIntervalShake >= Singleton.Instance.timeToShakeLeaving)
+        if (turnRight && timeIntervalShake >= Singleton.Instance.TimeToShakeLeaving)
         {
             turnRight = false;
-            kid.transform.rotation = Singleton.Instance.turnLeft;
+            kid.transform.rotation = Singleton.Instance.TurnLeft;
             timeIntervalShake = 0;
         }
-        else if (!turnRight && timeIntervalShake >= Singleton.Instance.timeToShakeLeaving)
+        else if (!turnRight && timeIntervalShake >= Singleton.Instance.TimeToShakeLeaving)
         {
             turnRight = true;
-            kid.transform.rotation = Singleton.Instance.turnRight;
+            kid.transform.rotation = Singleton.Instance.TurnRight;
             timeIntervalShake = 0;
         }
         
         
-        if (timeInterval >= Singleton.Instance.timeLeaving)
+        if (timeInterval >= Singleton.Instance.TimeLeaving)
         {
             nextState = new Escape(kid, rb);
             stage = EVENT.EXIT;
