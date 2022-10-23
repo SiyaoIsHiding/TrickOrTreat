@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Kid
 {
-    public bool shownUp;
-    public bool sprayed;
+    public bool ShownUp;
+    public bool Sprayed;
 
     public Kid()
     {
-        shownUp = false;
-        sprayed = false;
+        ShownUp = false;
+        Sprayed = false;
 
     }
 }
