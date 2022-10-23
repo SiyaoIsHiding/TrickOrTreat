@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4320081931410416091
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4320081931410416090}
+  - component: {fileID: 4320081931410416093}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4320081931410416090
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4320081931410416091}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.51, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4320081931410416093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4320081931410416091}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 758aa5173cfc04d7085a23e510101ac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kidPrefab: {fileID: 3940356609517496385, guid: a1e79a1b10af846ae8447baac4b5777d, type: 3}
+  AllSprites:
+  - {fileID: 21300000, guid: d287769cb52d44730b75576d2ac7206e, type: 3}
+  - {fileID: 21300000, guid: ddb4835d0b55d4f24ab21a28bce92f8b, type: 3}
+  - {fileID: 21300000, guid: 87ebf2f3c35474bb3aff2fcd8f358c06, type: 3}
+  - {fileID: 21300000, guid: 244e41f73142d4576b7015628331c453, type: 3}
+  - {fileID: 21300000, guid: fb7aed27af05f4d3fbb04584b7ae026a, type: 3}
+  - {fileID: 21300000, guid: 92bcf3e24aca649a0a612292c3418608, type: 3}
+  - {fileID: 21300000, guid: 93332d6d1e6d14506baec3653d03a532, type: 3}
+  - {fileID: 21300000, guid: 4850c45f815c94d6d97c35a75ffbfd1c, type: 3}
+  - {fileID: 21300000, guid: 61fdbbdc3f03f4820ada8f3345890832, type: 3}
+  - {fileID: 21300000, guid: 022032865b48244e498056fb42a0c269, type: 3}
+  - {fileID: 21300000, guid: 7d5e71069c3e549faa4d57e67307296a, type: 3}
+  - {fileID: 21300000, guid: be7731c4a80f24abb9b5159cd7f77aec, type: 3}
+  - {fileID: 21300000, guid: 78356e64a83604a0eb5ec69ae57fd263, type: 3}
+  - {fileID: 21300000, guid: ab170e5e6be8f4ecabcc914608ce7d38, type: 3}
+  - {fileID: 21300000, guid: 9b0809570a0534aff963e24ffb272c0f, type: 3}
+  - {fileID: 21300000, guid: 9593c930298e646b0b5b06c04b8c7fbe, type: 3}
+  - {fileID: 21300000, guid: e39952fe295194bd686eb88a2438301f, type: 3}
+  - {fileID: 21300000, guid: adbe87779c4f44feb9dd56d9ad3a02e4, type: 3}
+  - {fileID: 21300000, guid: f8482425aab384d26a47a9e3b5f85063, type: 3}
+  - {fileID: 21300000, guid: c5f4753b765cb4c61b241ecda1f81d66, type: 3}
+  - {fileID: 21300000, guid: e9d9f2c8a980943b889961cfea5c25aa, type: 3}
+  - {fileID: 21300000, guid: acc25f03512e64ca28a5bf64db110674, type: 3}
+  - {fileID: 21300000, guid: 7f4f04cb73834460aa30801fb58ad4f4, type: 3}
+  - {fileID: 21300000, guid: 62f84e15aea37457e8348017da48de53, type: 3}
+  - {fileID: 21300000, guid: bb0f57a807be24a51b291e4d7d56e127, type: 3}
+  - {fileID: 21300000, guid: 6f15c6dd545f345f68849633fa859a17, type: 3}
+  - {fileID: 21300000, guid: ec8e6630e449140dab592176577d186a, type: 3}
+  - {fileID: 21300000, guid: 8688183a17cb94761ac2cafaecfaf148, type: 3}
+  - {fileID: 21300000, guid: ff37e65d2722742cabda3f5ba3a99e00, type: 3}
+  - {fileID: 21300000, guid: 63ea0a73b0e2744ba80aad7a2d4a52e4, type: 3}
+  - {fileID: 21300000, guid: 082a07b04dd2343bf88b0e701a09fa5c, type: 3}
+  - {fileID: 21300000, guid: 8d6013f5eb0cb46b283b219fe4fce75d, type: 3}
+  - {fileID: 21300000, guid: 473b1fb3fdb864ac8841477f62002a64, type: 3}
+  - {fileID: 21300000, guid: 0e68fd7bba6554a228f79665d9e53cd7, type: 3}
+  - {fileID: 21300000, guid: 595aa935e8a9040349fe867ab72f46a8, type: 3}
+  - {fileID: 21300000, guid: 3664cde4ae2ad48d0915d56122320fd7, type: 3}
+  - {fileID: 21300000, guid: 3e11795f1f21a416ba9b30c78b6a0827, type: 3}
+  - {fileID: 21300000, guid: 9bccd719ac8964b67b1920adf0a2b1e9, type: 3}
+  KidsAlive: []

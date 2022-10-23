@@ -2,11 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa0350b9-b1dc-4acf-9adc-d079d388113e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/States/Escape.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/States/Escape.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/States/Leave.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/States/Leave.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/States/TakeCandy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/States/TakeCandy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Music.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Music/Music.ogg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Music/Music.ogg.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameOver.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Scripts/GameOver.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/test scene (skylar).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/test scene (skylar).unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/PlayerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/ScoreBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/ScoreBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +96,11 @@
       <workItem from="1666466865306" duration="325000" />
       <workItem from="1666467207150" duration="4591000" />
       <workItem from="1666475228371" duration="7113000" />
-      <workItem from="1666495471064" duration="1790000" />
+      <workItem from="1666495471064" duration="2995000" />
+      <workItem from="1666539660954" duration="2178000" />
+      <workItem from="1666543144972" duration="6971000" />
+      <workItem from="1666554903331" duration="2151000" />
+      <workItem from="1666558251808" duration="6690000" />
     </task>
     <task id="LOCAL-00001" summary="Kid">
       <created>1666412048578</created>
