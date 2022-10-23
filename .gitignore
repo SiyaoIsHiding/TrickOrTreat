@@ -59,3 +59,5 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+.idea/
+mono_crash.mem.3506.1.blob
