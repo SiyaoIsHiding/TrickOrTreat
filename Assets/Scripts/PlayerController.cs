@@ -9,6 +9,9 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     public float sprayTime;
+
+    public ScoreBoard scoreboard;
+
     
     void Update()
     {
@@ -19,10 +22,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+
     IEnumerator SprayChild()
     {
         animator.SetBool("spraying", true);
         sprayEffect.SetActive(true);
+
+        //testing for now
+        scoreboard.DecreaseCandyCounter(5);
 
 
         yield return new WaitForSeconds(sprayTime);
@@ -30,4 +37,6 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("spraying", false);
         sprayEffect.SetActive(false);
     }
+
+    
 }
