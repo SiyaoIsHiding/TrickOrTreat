@@ -5,11 +5,17 @@ using TMPro;
 
 public class ScoreBoard : MonoBehaviour
 {
+
+    [Header("Starting Values")]
+
     [SerializeField]
     public int happyKidCounter;
 
     [SerializeField]
     public int candyCounter;
+    [Space(10)]
+
+    [Header("UI Text Boxes")]
 
     public TextMeshProUGUI kidCountText;
     public TextMeshProUGUI candyCountText;
