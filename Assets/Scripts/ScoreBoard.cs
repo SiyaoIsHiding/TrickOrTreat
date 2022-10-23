@@ -55,5 +55,27 @@ public class ScoreBoard : MonoBehaviour
         kidCountText.text = "Happy Kid Counter: " + happyKidCounter.ToString();
         candyCountText.text = "Candies: " + candyCounter.ToString();
     }
+
+    public void KidHasLeft(Kid kid)
+    {
+
+        if (kid.NumCandyHolding == 1 || !kid.ShownUp)
+        {
+            if (kid.Sprayed)
+            {
+                DecreaseCandyCounter(5);
+            }
+            else
+            {
+                
+            }
+        }
+        else
+        {
+            
+        }
+        
+        else if(kid.)
+    }
     
 }
