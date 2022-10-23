@@ -9,7 +9,9 @@ public class KidStore
     public static Kid[] allKids;
     public static List<Kid> newKids;
     public static List<Kid> oldKids;
-    private static float newKidProb = Singleton.Instance.newKidProb;
+    private static float newKidProb = Singleton.Instance.NewKidProb;
+    private static float multipleCandyProb = Singleton.Instance.MultiCandyProb;
+    private static int maxCandy = Singleton.Instance.MaxCandy;
 
     static KidStore()
     {
@@ -25,9 +27,10 @@ public class KidStore
     public static int[] ChooseKidsComing()
     {
         int newKidInd = -1;
+        float i;
         if (oldKids.Count > 0)
         {
-            float i = UnityEngine.Random.Range(0, 1);
+            i = UnityEngine.Random.Range(0, 1);
             if (i > newKidProb)
             {
                 // old kid
@@ -51,9 +54,24 @@ public class KidStore
         else
         {
             throw new Exception("No Kids are coming. Game ends.");
+            // TODO: Notify Skylar Game Ends
         }
         
-        Debug.Log(newKidInd);
+        // Choose how many candies they are gonna take
+
+        Kid kid = allKids[newKidInd];
+        i = UnityEngine.Random.Range(0.0f, 1.0f);
+        if (i > multipleCandyProb)
+        {
+            // single candy
+            kid.NumCandyHolding = 1;
+        }
+        else
+        {
+            int num = UnityEngine.Random.Range(2,maxCandy+1);
+            kid.NumCandyHolding = num;
+        }
+        Debug.Log(kid);
         
         return new int[] { newKidInd };
     }

@@ -13,7 +13,11 @@ public sealed class Singleton
     public readonly int NumCharacters = 38;
     
     // Algorithm on new kids coming
-    public readonly float newKidProb = 0.6f; // old kid prob: 1-newKidProb
+    public readonly float NewKidProb = 0.6f; // old kid prob: 1-newKidProb
+
+    public readonly float MultiCandyProb = 0.5f;
+
+    public readonly int MaxCandy = 6;
     // Speed
     public readonly Vector2 ApproachingSpeed = new Vector2(20.0f, 0.0f);
     public readonly Vector2 LeavingSpeed = new Vector2(-20.0f, 0.0f);
