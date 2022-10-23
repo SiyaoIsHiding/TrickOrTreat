@@ -7,7 +7,7 @@ public class Leave : BaseState
     private float timeInterval;
     private float timeIntervalShake;
     private bool turnRight;
-    public Leave(GameObject _kid, Rigidbody2D _rb) : base(_kid, _rb)
+    public Leave(GameObject _kid, Rigidbody2D _rb, Kid _associatedKid) : base(_kid, _rb, _associatedKid)
     {
         currState = STATE.LEAVE;
         
@@ -43,7 +43,7 @@ public class Leave : BaseState
         
         if (timeInterval >= Singleton.Instance.TimeLeaving)
         {
-            nextState = new Escape(kid, rb);
+            nextState = new Escape(kid, rb, associatedKid);
             stage = EVENT.EXIT;
         }
     }

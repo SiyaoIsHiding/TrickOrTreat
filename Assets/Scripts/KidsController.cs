@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Serialization;
 using Random = System.Random;
@@ -9,14 +10,15 @@ public class KidsController : MonoBehaviour
 {
     
     private static KidsController instance;
-    private static readonly int MaxGroupSize = Singleton.Instance.MaxGroupSize;
     [FormerlySerializedAs("_kidPrefab")] public GameObject kidPrefab;
-
-    public Kid[] AllKids;
-    public Sprite[] AllSprites;
-    public List<GameObject> KidsAlive = new List<GameObject>();
-
     
+    public Sprite[] AllSprites;
+    public List<int> KidsAliveIndex = new List<int>();
+
+    public List<Kid> NewKids = KidStore.newKids;
+    public List<Kid> OldKids = KidStore.oldKids;
+
+
     static public Kid[] WhoAreComing()
     {
         // return an array of kids. You can access the ShownUp and NumCandiesHolding of each kid.
@@ -31,42 +33,71 @@ public class KidsController : MonoBehaviour
         return kids;
     }
 
+    public int candyChanged()
+    {
+        // called when a player sprays
+        Kid[] kidsComing = WhoAreComing();
+        bool succeed = false;
+        foreach (Kid kid in kidsComing)
+        {
+            if (kid.ShownUp)
+            {
+                succeed = true;
+                break;
+            }
+
+            if (kid.NumCandyHolding > 1)
+            {
+                succeed = true;
+            }
+        }
+
+        if (succeed)
+        {
+            return 0;
+        }
+        else
+        {
+            return -5;
+        }
+    }
+
     static public void Spray()
     {
         
     }
 
-    static public void KidInvisible(GameObject kidGO)
+    static public void KidInvisible(int kidId)
     {
-        instance.KidsAlive.Remove(kidGO);
+        instance.KidsAliveIndex.Remove(kidId);
         // TODO: check whether all kidsGO invisible
+        KidStore.KidReturn(kidId);
         instance.sendNewKids();
     }
 
     private void sendNewKids()
     {
-        GameObject newKid = Instantiate(kidPrefab, this.transform);
-        KidsAlive.Add(newKid);
-        KidsChangeSprites(newKid, ChooseKidsComing()[0]);
+        
+        
+        int[] newKidsIndex = KidStore.ChooseKidsComing(); // assume only 1
+        int thisKidIndex = newKidsIndex[0];
+        GameObject thisKidGO = Instantiate(kidPrefab, this.transform);
+        thisKidGO.GetComponent<KidMovement>().associatedKid = KidStore.allKids[thisKidIndex];
+        KidsAliveIndex.Add(thisKidIndex);
+        KidsChangeSprites(thisKidGO, thisKidIndex);
+        Debug.Log("Newkids: "+string.Join(",", NewKids));
+        Debug.Log("Oldkids: "+string.Join(",", OldKids));
     }
 
     void Start()
     {
         instance = this;
-        
         sendNewKids();
     }
 
     void Update()
     {
 
-    }
-
-    private int[] ChooseKidsComing()
-    {
-        // Implement later
-        int newKidInd = UnityEngine.Random.Range(0, 38);
-        return new int[] { newKidInd };
     }
     
 

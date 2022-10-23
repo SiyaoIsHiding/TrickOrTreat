@@ -5,7 +5,7 @@ using UnityEngine;
 public class Escape : BaseState
 {
     private Renderer rd;
-    public Escape(GameObject _kid, Rigidbody2D _rb) : base(_kid, _rb)
+    public Escape(GameObject _kid, Rigidbody2D _rb, Kid _associatedKid) : base(_kid, _rb, _associatedKid)
     {
         currState = STATE.ESCAPE;
         rd = _kid.GetComponentInChildren<Renderer>();
@@ -22,7 +22,7 @@ public class Escape : BaseState
     {
         if (!rd.isVisible)
         {
-            KidsController.KidInvisible(kid);
+            KidsController.KidInvisible(associatedKid.id);
             Object.Destroy(kid);
         }
         base.Update();

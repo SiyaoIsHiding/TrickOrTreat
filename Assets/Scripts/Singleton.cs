@@ -9,12 +9,15 @@ public sealed class Singleton
     // Adjust parameters here
     // Not important parameters in BaseState.cs
     
-    // Max group size
-    public readonly int MaxGroupSize = 5;
+    // Num of characters
+    public readonly int NumCharacters = 38;
+    
+    // Algorithm on new kids coming
+    public readonly float newKidProb = 0.6f; // old kid prob: 1-newKidProb
     // Speed
-    public readonly Vector2 ApproachingSpeed = new Vector2(2.0f, 0.0f);
-    public readonly Vector2 LeavingSpeed = new Vector2(-2.0f, 0.0f);
-    public readonly Vector2 EscapingSpeed = new Vector2(-6.0f, 0f);
+    public readonly Vector2 ApproachingSpeed = new Vector2(20.0f, 0.0f);
+    public readonly Vector2 LeavingSpeed = new Vector2(-20.0f, 0.0f);
+    public readonly Vector2 EscapingSpeed = new Vector2(-60.0f, 0f);
     
     // Time
     public readonly float TimeTakingCandy = 1.0f;

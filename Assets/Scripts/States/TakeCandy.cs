@@ -8,7 +8,7 @@ public class TakeCandy : BaseState
     private float timeInterval;
     private float[] timeIntervalShake;
     private int[] shakeDirections;
-    public TakeCandy(GameObject _kid, Rigidbody2D _rb) : base(_kid, _rb)
+    public TakeCandy(GameObject _kid, Rigidbody2D _rb, Kid _associatedKid) : base(_kid, _rb, _associatedKid)
     {
         currState = STATE.TAKECANDY;
         // TODO: Set 1 or More
@@ -59,7 +59,7 @@ public class TakeCandy : BaseState
         // to exit
         if (timeInterval >= Singleton.Instance.TimeTakingCandy)
         {
-            nextState = new Leave(kid, rb);
+            nextState = new Leave(kid, rb, associatedKid);
             stage = EVENT.EXIT;
         }
     }

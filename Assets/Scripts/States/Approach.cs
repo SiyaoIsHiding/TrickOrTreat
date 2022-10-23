@@ -6,7 +6,7 @@ public class Approach : BaseState
 {
     private bool turnRight;
     private float timeIntervalShake;
-    public Approach(GameObject _kid, Rigidbody2D rb) : base(_kid, rb)
+    public Approach(GameObject _kid, Rigidbody2D _rb, Kid _associatedKid) : base(_kid, _rb, _associatedKid)
     {
         currState = STATE.APPROACH;
     }
@@ -40,7 +40,7 @@ public class Approach : BaseState
         // Debug.DrawRay(stopPos, Vector3.up, Color.red);
         if (hit)
         {
-            nextState = new TakeCandy(kid, rb);
+            nextState = new TakeCandy(kid, rb, associatedKid);
             stage = EVENT.EXIT;
         }
             
