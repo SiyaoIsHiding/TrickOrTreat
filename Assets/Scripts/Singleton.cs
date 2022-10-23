@@ -1,5 +1,6 @@
 
 using UnityEngine;
+
 public sealed class Singleton
 {
     private static Singleton _instance = null;
@@ -18,15 +19,11 @@ public sealed class Singleton
     public readonly float timeLeaving = 3.0f;
     
     // Shaking effects
-    public readonly Quaternion turnRight = Quaternion.Euler(Vector3.forward * -10);
-    public readonly Quaternion turnLeft = Quaternion.Euler(Vector3.forward * 10);
+    public readonly Quaternion turnRight = Quaternion.Euler(Vector3.forward * 10);
+    public readonly Quaternion turnLeft = Quaternion.Euler(Vector3.forward * -10);
     public readonly float timeToShakeAppraoching = 0.5f;
-    public readonly float timeToShakeLeaving = 0.5f;
-    public readonly float timeToShakeEscaping = 0.15f;
-    public readonly float[] timeIntervalShakeTaking1 = new[] { 0.4f, 0.5f }; // should smaller than timeTakingCandy
-    public readonly int[] shakeDirectionsTaking1 = new[] { -1, 0 }; // 1 is turn left, -1 is right, 0 is back normal
-    public readonly float[] timeIntervalShakeTakingMore = new[] { 0.4f, 0.5f, 0.6f, 0.7f};
-    public readonly int[] shakeDirectionsTakingMore = new[] { -1, 0, -1, 0};
+    public readonly float[] timeIntervalShakeTaking1 = new[] { 0.4f, 0.5f };
+    public readonly int[] shakeDirectionsTaking1 = new[] { 1, 0 }; // 1 is turn right, -1 is left, 0 is back normal
 
     private Singleton()
     {
