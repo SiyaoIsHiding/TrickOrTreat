@@ -14,6 +14,7 @@ public class Escape : BaseState
     public override void Enter()
     {
         rb.velocity = Singleton.Instance.EscapingSpeed;
+        kid.transform.rotation = Singleton.Instance.turnRight;
         base.Enter();
     }
 
