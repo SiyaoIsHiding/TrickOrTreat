@@ -7,7 +7,7 @@ using UnityEngine;
 public class KidMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    private BaseState state;
+    public BaseState state;
     public Kid associatedKid = new Kid(-1);
     [SerializeField] private String stateName;
     public GameObject gameObject;

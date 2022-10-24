@@ -33,18 +33,19 @@ public class KidsController : MonoBehaviour
     {
 
         // Only one now
+        ScoreBoard.UpdateScore(true);
         Kid kid = KidStore.allKids[instance.KidsAliveIndex[0]];
         kid.Sprayed = true;
         instance.thisKidGO.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
             instance.AllBlueSprites[instance.KidsAliveIndex[0]];
         KidStore.Spray(kid.id);
+        instance.thisKidGO.GetComponent<KidMovement>().state.Sprayed();
     }
 
     static public void KidInvisible(int kidId)
     {
-        GameObject.Find("Scoreboard").GetComponent<ScoreBoard>().KidHasLeft();
+        ScoreBoard.UpdateScore(false);
         instance.KidsAliveIndex.Remove(kidId);
-        // TODO: check whether all kidsGO invisible
         KidStore.KidReturn(kidId);
         instance.sendNewKids();
     }
@@ -59,8 +60,8 @@ public class KidsController : MonoBehaviour
         thisKidGO.GetComponent<KidMovement>().associatedKid = KidStore.allKids[thisKidIndex];
         KidsAliveIndex.Add(thisKidIndex);
         KidsChangeSprites(thisKidGO, thisKidIndex);
-        Debug.Log("Newkids: "+string.Join(",", NewKids));
-        Debug.Log("Oldkids: "+string.Join(",", OldKids));
+        if(ScoreBoard.Instance)
+        {ScoreBoard.NewKidsComing();}
     }
 
     void Start()

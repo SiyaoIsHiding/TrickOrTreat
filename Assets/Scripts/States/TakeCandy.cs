@@ -26,6 +26,12 @@ public class TakeCandy : BaseState
         }
     }
 
+    public void Sprayed()
+    {
+        nextState = new Escape(kid, rb, associatedKid);
+        stage = EVENT.EXIT;
+    }
+
     public override void Enter()
     {
         timeInterval = 0f;

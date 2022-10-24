@@ -7,11 +7,13 @@ public class Leave : BaseState
     private float timeInterval;
     private float timeIntervalShake;
     private bool turnRight;
+    private Renderer rd;
     public Leave(GameObject _kid, Rigidbody2D _rb, Kid _associatedKid) : base(_kid, _rb, _associatedKid)
     {
         currState = STATE.LEAVE;
-        
+        rd = _kid.GetComponentInChildren<Renderer>();
     }
+    
 
     public override void Enter()
     {
@@ -25,6 +27,11 @@ public class Leave : BaseState
 
     public override void Update()
     {
+        if (!rd.isVisible)
+        {
+            KidsController.KidInvisible(associatedKid.id);
+            Object.Destroy(kid);
+        }
         timeInterval += Time.deltaTime;
         timeIntervalShake += Time.deltaTime;
         if (turnRight && timeIntervalShake >= Singleton.Instance.TimeToShakeLeaving)

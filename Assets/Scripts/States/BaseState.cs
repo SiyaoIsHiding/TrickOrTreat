@@ -56,4 +56,14 @@ public class BaseState
         return this;
     }
     
+    public void Sprayed()
+    {
+        if (currState == STATE.ESCAPE)
+        {
+            return;
+        }
+        nextState = new Escape(kid, rb, associatedKid);
+        stage = EVENT.EXIT;
+    }
+    
 }
