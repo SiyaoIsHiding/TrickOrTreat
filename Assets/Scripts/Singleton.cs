@@ -10,7 +10,7 @@ public sealed class Singleton
     // Not important parameters in BaseState.cs
     
     // Num of characters
-    public readonly int NumCharacters = 38;
+    public readonly int NumCharacters = 52;
     
     // Algorithm on new kids coming
     public readonly float NewKidProb = 0.6f; // old kid prob: 1-newKidProb

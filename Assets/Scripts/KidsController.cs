@@ -13,10 +13,12 @@ public class KidsController : MonoBehaviour
     [FormerlySerializedAs("_kidPrefab")] public GameObject kidPrefab;
     
     public Sprite[] AllSprites;
+    public Sprite[] AllBlueSprites;
     public List<int> KidsAliveIndex = new List<int>();
 
     public List<Kid> NewKids = KidStore.newKids;
     public List<Kid> OldKids = KidStore.oldKids;
+    private GameObject thisKidGO;
 
 
     static public Kid[] WhoAreComing()
@@ -29,10 +31,12 @@ public class KidsController : MonoBehaviour
 
     static public void Spray()
     {
-        GameObject.Find("Scoreboard").GetComponent<ScoreBoard>().KidHasLeft();
+        
         // Only one now
         Kid kid = KidStore.allKids[instance.KidsAliveIndex[0]];
         kid.Sprayed = true;
+        instance.thisKidGO.transform.GetChild(0).GetComponent<SpriteRenderer>().sprite =
+            instance.AllBlueSprites[instance.KidsAliveIndex[0]];
         KidStore.Spray(kid.id);
     }
 
@@ -51,7 +55,7 @@ public class KidsController : MonoBehaviour
         
         int[] newKidsIndex = KidStore.ChooseKidsComing(); // assume only 1
         int thisKidIndex = newKidsIndex[0];
-        GameObject thisKidGO = Instantiate(kidPrefab, this.transform);
+        thisKidGO = Instantiate(kidPrefab, this.transform);
         thisKidGO.GetComponent<KidMovement>().associatedKid = KidStore.allKids[thisKidIndex];
         KidsAliveIndex.Add(thisKidIndex);
         KidsChangeSprites(thisKidGO, thisKidIndex);
