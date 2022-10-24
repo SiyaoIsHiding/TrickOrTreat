@@ -61,6 +61,7 @@ public class ScoreBoard : MonoBehaviour
 
     public void KidHasLeft()
     {
+
         Kid kid = KidsController.WhoAreComing()[0];
 
         if (kid.NumCandyHolding == 1 || !kid.ShownUp)
