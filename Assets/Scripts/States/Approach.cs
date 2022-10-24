@@ -46,6 +46,8 @@ public class Approach : BaseState
             
     }
 
+    
+
     public override void Exit()
     {
         kid.transform.rotation = Quaternion.identity;

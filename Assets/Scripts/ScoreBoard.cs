@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Serialization;
 
 public class ScoreBoard : MonoBehaviour
 {
@@ -17,13 +18,16 @@ public class ScoreBoard : MonoBehaviour
     public TextMeshProUGUI kidCountText;
     public TextMeshProUGUI candyCountText;
 
-    [Space(10)]
-    public GameOver gameober;
+    [FormerlySerializedAs("gameober")] [Space(10)]
+    public GameOver gameOver;
+
+    private bool resultUpdated = false;
+    public static ScoreBoard Instance;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        Instance = this;
         kidCountText.text = "Happy Kid Counter: " + happyKidCounter.ToString();
         candyCountText.text = "Candies: " + candyCounter.ToString();
     }
@@ -61,45 +65,36 @@ public class ScoreBoard : MonoBehaviour
 
 
 
-
-    public void KidHasLeft()
+    public static void NewKidsComing()
     {
+        Instance.resultUpdated = false;
+    }
 
+    public static void UpdateScore(bool spray)
+    {
+        if (Instance.resultUpdated)
+        {
+            return;
+        }
+
+        Instance.resultUpdated = true;
         Kid kid = KidsController.WhoAreComing()[0];
-
-        if (kid.NumCandyHolding == 1 && !kid.ShownUp)
+        bool goodKid = !(kid.NumCandyHolding > 1 || kid.ShownUp);
+        if (goodKid && spray)
         {
-            if (kid.Sprayed)
-            {
-                DecreaseCandyCounter(5);
-            }
-            else
-            {
-                DecreaseCandyCounter(1);
-                IncreaseKidCounter(1);
-            }
+            Instance.DecreaseCandyCounter(5);
+        }else if (!goodKid & spray)
+        {
+            // nothing
+        }else
+        {
+            Instance.DecreaseCandyCounter(kid.NumCandyHolding);
+            Instance.IncreaseKidCounter(1);
         }
-        else if (kid.NumCandyHolding > 1 || kid.ShownUp)
+        
+        if (Instance.candyCounter <= 0)
         {
-            if (!kid.Sprayed)
-            {
-                DecreaseCandyCounter(kid.NumCandyHolding);
-
-                if (!kid.ShownUp)
-                {
-                    IncreaseKidCounter(1);
-                }
-                
-            }
-            else
-            {
-                Debug.Log("success");
-            }
-        }
-
-        if (candyCounter <= 0)
-        {
-            gameober.Gameover();
+            Instance.gameOver.Gameover();
         }
 
     }
