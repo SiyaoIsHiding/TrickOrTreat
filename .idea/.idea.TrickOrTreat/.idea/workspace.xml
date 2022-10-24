@@ -4,6 +4,8 @@
     <list default="true" id="fa0350b9-b1dc-4acf-9adc-d079d388113e" name="Changes" comment="KidsController">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.TrickOrTreat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TrickOrTreat/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/KidStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KidStore.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KidsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KidsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
