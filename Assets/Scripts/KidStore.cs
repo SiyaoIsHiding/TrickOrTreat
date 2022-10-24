@@ -28,35 +28,40 @@ public class KidStore
     {
         int newKidInd = -1;
         float i;
-        if (oldKids.Count > 0)
-        {
-            i = UnityEngine.Random.Range(0, 1);
-            if (i > newKidProb)
-            {
-                // old kid
-                int j = UnityEngine.Random.Range(0, oldKids.Count);
-                newKidInd = oldKids[j].id;
-            }
-            else if (newKids.Count > 0)
-            {
-                // new kid
-                int j = UnityEngine.Random.Range(0, newKids.Count);
-                newKidInd = newKids[j].id;
-            }
-        }
-        // no old kid
-        else if (newKids.Count > 0)
-        {
-            // new kid
-            int j = UnityEngine.Random.Range(0, newKids.Count);
-            newKidInd = newKids[j].id;
-        }
-        else
+        int j;
+        if (oldKids.Count == 0 && newKids.Count == 0)
         {
             throw new Exception("No Kids are coming. Game ends.");
             // TODO: Notify Skylar Game Ends
+        }else if (oldKids.Count == 0)
+        {
+            // new kids only
+            j = UnityEngine.Random.Range(0, newKids.Count);
+            newKidInd = newKids[j].id;
+        }else if (newKids.Count == 0)
+        {
+            // old kid only
+            j = UnityEngine.Random.Range(0, oldKids.Count);
+            newKidInd = oldKids[j].id;
         }
-        
+        else
+        {
+            // both old kids and new kids existing
+            i = UnityEngine.Random.Range(0f, 1f);
+            Debug.Log(i);
+            if (i > newKidProb)
+            {
+                // old kid
+                j = UnityEngine.Random.Range(0, oldKids.Count);
+                newKidInd = oldKids[j].id;
+            }
+            else
+            {
+                // new kid
+                j = UnityEngine.Random.Range(0, newKids.Count);
+                newKidInd = newKids[j].id;
+            }
+        }
         // Choose how many candies they are gonna take
 
         Kid kid = allKids[newKidInd];
