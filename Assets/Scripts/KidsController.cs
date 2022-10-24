@@ -31,7 +31,7 @@ public class KidsController : MonoBehaviour
 
     static public void Spray()
     {
-        
+
         // Only one now
         Kid kid = KidStore.allKids[instance.KidsAliveIndex[0]];
         kid.Sprayed = true;
