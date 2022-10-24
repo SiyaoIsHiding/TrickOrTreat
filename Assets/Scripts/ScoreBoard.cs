@@ -64,6 +64,8 @@ public class ScoreBoard : MonoBehaviour
         Kid kid = KidsController.WhoAreComing()[0];
 >>>>>>> Stashed changes
 
+        Kid kid = KidsController.WhoAreComing()[0];
+
         if (kid.NumCandyHolding == 1 || !kid.ShownUp)
         {
             if (kid.Sprayed)
@@ -89,5 +91,9 @@ public class ScoreBoard : MonoBehaviour
         }
 
     }
+<<<<<<< Updated upstream
     
+=======
+
+>>>>>>> Stashed changes
 }
