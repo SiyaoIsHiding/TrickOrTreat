@@ -99,12 +99,10 @@ public class KidStore
         if (kid.ShownUp)
         {
             oldKids.Remove(kid);
-            Debug.Log($"OldKids removes {kid.id}");
         }
         else
         {
             newKids.Remove(kid);
-            Debug.Log($"NewKids removes {kid.id}");
         }
         
     }
