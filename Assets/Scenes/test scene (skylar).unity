@@ -1767,6 +1767,7 @@ MonoBehaviour:
   candyCounter: 25
   kidCountText: {fileID: 1600444937}
   candyCountText: {fileID: 1962945687}
+  gameober: {fileID: 149131951}
 --- !u!1 &1732279621
 GameObject:
   m_ObjectHideFlags: 0

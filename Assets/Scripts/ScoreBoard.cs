@@ -93,7 +93,6 @@ public class ScoreBoard : MonoBehaviour
 
         if (candyCounter <= 0)
         {
-            Time.timeScale = 0;
             gameober.Gameover();
         }
 
