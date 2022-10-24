@@ -8,10 +8,15 @@ public class GameOver : MonoBehaviour
 {
     public TextMeshProUGUI kidsText;
 
-    public void Setup(int score)
+    public ScoreBoard scoreboard;
+
+    public void Gameover()
     {
         gameObject.SetActive(true);
-        kidsText.text = $"You made {score.ToString()} kids happy this Halloween!";
+
+        int score = scoreboard.GetKidCounter();
+        string kidGrammer = score == 1 ? "kid" : "kids";
+        kidsText.text = $"You made {score} {kidGrammer} happy this Halloween!";
     }
 
     public void RestartButton()

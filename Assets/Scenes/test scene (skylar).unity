@@ -377,6 +377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kidsText: {fileID: 78844228}
+  scoreboard: {fileID: 1691947546}
 --- !u!1 &207214307
 GameObject:
   m_ObjectHideFlags: 0
