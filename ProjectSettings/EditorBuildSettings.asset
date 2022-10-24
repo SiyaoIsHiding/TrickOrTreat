@@ -8,4 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 0
+    path: Assets/Scenes/test scene (skylar).unity
+    guid: 456211b3cd56c824ca8c629b76784366
   m_configObjects: {}
