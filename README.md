@@ -12,7 +12,7 @@ Gian-Paolo: Production, Art, Sound
 
 Skylar: Coding (Player Control)
 
-Jane: Coding (NPC)
+Siyao (Jane): Coding (NPC)
 
 Leo: Design
 
