@@ -24,6 +24,9 @@ public class GameOver : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("test scene");
+
+        gameObject.SetActive(false);
+
     }
     
     public void ExitButton()
