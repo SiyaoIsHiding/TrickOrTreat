@@ -14,9 +14,7 @@ public sealed class Singleton
     
     // Algorithm on new kids coming
     public readonly float NewKidProb = 0.6f; // old kid prob: 1-newKidProb
-
     public readonly float MultiCandyProb = 0.5f;
-
     public readonly int MaxCandy = 6;
     // Speed
     public readonly Vector2 ApproachingSpeed = new Vector2(10.0f, 0.0f);
