@@ -84,6 +84,12 @@ public class ScoreBoard : MonoBehaviour
             if (!kid.Sprayed)
             {
                 DecreaseCandyCounter(kid.NumCandyHolding);
+
+                if (!kid.ShownUp)
+                {
+                    IncreaseKidCounter(1);
+                }
+                
             }
             else
             {
