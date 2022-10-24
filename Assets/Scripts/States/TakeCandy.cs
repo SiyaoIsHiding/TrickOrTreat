@@ -2,18 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Video;
 
 public class TakeCandy : BaseState
 {
     private float timeInterval;
     private float[] timeIntervalShake;
     private int[] shakeDirections;
-    public TakeCandy(GameObject _kid, Rigidbody2D _rb) : base(_kid, _rb)
+    private bool audioPlayed = false;
+    public TakeCandy(GameObject _kid, Rigidbody2D _rb, Kid _associatedKid) : base(_kid, _rb, _associatedKid)
     {
         currState = STATE.TAKECANDY;
         // TODO: Set 1 or More
-        timeIntervalShake = Singleton.Instance.timeIntervalShakeTakingMore;
-        shakeDirections = Singleton.Instance.shakeDirectionsTakingMore;
+        if (associatedKid.NumCandyHolding == 1)
+        {
+            timeIntervalShake = Singleton.Instance.TimeIntervalShakeTaking1;
+            shakeDirections = Singleton.Instance.ShakeDirectionsTaking1;
+        }
+        else
+        {
+            timeIntervalShake = Singleton.Instance.TimeIntervalShakeTakingMore;
+            shakeDirections = Singleton.Instance.ShakeDirectionsTakingMore;
+        }
     }
 
     public override void Enter()
@@ -39,13 +49,26 @@ public class TakeCandy : BaseState
         switch (shakeDirections[step])
         {
             case 1:
-                kid.transform.rotation = Singleton.Instance.turnRight;
+                kid.transform.rotation = Singleton.Instance.TurnRight;
+                if (!audioPlayed)
+                {
+                    audioPlayed = true;
+                    if (associatedKid.NumCandyHolding == 1)
+                    {
+                        kid.transform.GetChild(1).GetComponent<AudioSource>().Play();
+                    }
+                    else
+                    {
+                        kid.transform.GetChild(2).GetComponent<AudioSource>().Play();
+                    }
+                    
+                }
                 break;
             case 0:
                 kid.transform.rotation = Quaternion.identity;
                 break;
             case -1:
-                kid.transform.rotation = Singleton.Instance.turnLeft;
+                kid.transform.rotation = Singleton.Instance.TurnLeft;
                 break;
         }
         
@@ -57,9 +80,9 @@ public class TakeCandy : BaseState
         timeInterval += Time.deltaTime;
         shakingHandler();
         // to exit
-        if (timeInterval >= Singleton.Instance.timeTakingCandy)
+        if (timeInterval >= Singleton.Instance.TimeTakingCandy)
         {
-            nextState = new Leave(kid, rb);
+            nextState = new Leave(kid, rb, associatedKid);
             stage = EVENT.EXIT;
         }
     }

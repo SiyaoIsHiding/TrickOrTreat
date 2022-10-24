@@ -56,13 +56,8 @@ public class ScoreBoard : MonoBehaviour
         candyCountText.text = "Candies: " + candyCounter.ToString();
     }
 
-    public void KidHasLeft()
-    {
-<<<<<<< Updated upstream
-        Kid kid KidsController.WhoAreComing()[0];
-=======
-        Kid kid = KidsController.WhoAreComing()[0];
->>>>>>> Stashed changes
+
+
 
         Kid kid = KidsController.WhoAreComing()[0];
 
@@ -91,9 +86,4 @@ public class ScoreBoard : MonoBehaviour
         }
 
     }
-<<<<<<< Updated upstream
-    
-=======
-
->>>>>>> Stashed changes
 }
