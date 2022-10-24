@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
 
     public void Gameover()
     {
+        Time.timeScale = 0;
         gameObject.SetActive(true);
 
         int score = scoreboard.GetKidCounter();
@@ -21,7 +22,8 @@ public class GameOver : MonoBehaviour
 
     public void RestartButton()
     {
-        SceneManager.LoadScene("MainScene");
+        Time.timeScale = 1;
+        SceneManager.LoadScene("test scene");
     }
     
     public void ExitButton()
