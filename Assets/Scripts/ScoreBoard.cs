@@ -58,7 +58,11 @@ public class ScoreBoard : MonoBehaviour
 
     public void KidHasLeft()
     {
+<<<<<<< Updated upstream
         Kid kid KidsController.WhoAreComing()[0];
+=======
+        Kid kid = KidsController.WhoAreComing()[0];
+>>>>>>> Stashed changes
 
         if (kid.NumCandyHolding == 1 || !kid.ShownUp)
         {
@@ -68,15 +72,22 @@ public class ScoreBoard : MonoBehaviour
             }
             else
             {
-                
+                DecreaseCandyCounter(1);
+                IncreaseKidCounter(1);
             }
         }
-        else
+        else if (kid.NumCandyHolding > 1 || !kid.ShownUp)
         {
-            
+            if (!kid.Sprayed)
+            {
+                DecreaseCandyCounter(kid.NumCandyHolding);
+            }
+            else
+            {
+                //nothing
+            }
         }
-        
-        else if(kid.)
+
     }
     
 }
