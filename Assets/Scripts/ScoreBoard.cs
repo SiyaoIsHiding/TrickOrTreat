@@ -56,9 +56,10 @@ public class ScoreBoard : MonoBehaviour
         candyCountText.text = "Candies: " + candyCounter.ToString();
     }
 
-    /*
-    public void KidHasLeft(Kid kid)
-    {
+
+
+
+        Kid kid = KidsController.WhoAreComing()[0];
 
         if (kid.NumCandyHolding == 1 || !kid.ShownUp)
         {
@@ -68,16 +69,21 @@ public class ScoreBoard : MonoBehaviour
             }
             else
             {
-                
+                DecreaseCandyCounter(1);
+                IncreaseKidCounter(1);
             }
         }
-        else
+        else if (kid.NumCandyHolding > 1 || !kid.ShownUp)
         {
-            
+            if (!kid.Sprayed)
+            {
+                DecreaseCandyCounter(kid.NumCandyHolding);
+            }
+            else
+            {
+                //nothing
+            }
         }
-        
-        else if(kid.)
+
     }
-    */
-    
 }
