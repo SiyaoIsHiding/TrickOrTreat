@@ -56,6 +56,7 @@ public class ScoreBoard : MonoBehaviour
         candyCountText.text = "Candies: " + candyCounter.ToString();
     }
 
+    /*
     public void KidHasLeft(Kid kid)
     {
 
@@ -77,5 +78,6 @@ public class ScoreBoard : MonoBehaviour
         
         else if(kid.)
     }
+    */
     
 }
