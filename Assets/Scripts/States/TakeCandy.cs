@@ -2,12 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.Video;
 
 public class TakeCandy : BaseState
 {
     private float timeInterval;
     private float[] timeIntervalShake;
     private int[] shakeDirections;
+    private bool audioPlayed = false;
     public TakeCandy(GameObject _kid, Rigidbody2D _rb, Kid _associatedKid) : base(_kid, _rb, _associatedKid)
     {
         currState = STATE.TAKECANDY;
@@ -48,6 +50,19 @@ public class TakeCandy : BaseState
         {
             case 1:
                 kid.transform.rotation = Singleton.Instance.TurnRight;
+                if (!audioPlayed)
+                {
+                    audioPlayed = true;
+                    if (associatedKid.NumCandyHolding == 1)
+                    {
+                        kid.transform.GetChild(1).GetComponent<AudioSource>().Play();
+                    }
+                    else
+                    {
+                        kid.transform.GetChild(2).GetComponent<AudioSource>().Play();
+                    }
+                    
+                }
                 break;
             case 0:
                 kid.transform.rotation = Quaternion.identity;
