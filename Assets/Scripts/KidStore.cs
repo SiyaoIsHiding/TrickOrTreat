@@ -30,7 +30,7 @@ public class KidStore
         float i;
         if (oldKids.Count > 0)
         {
-            i = UnityEngine.Random.Range(0, 1);
+            i = UnityEngine.Random.Range(0f, 1f);
             if (i > newKidProb)
             {
                 // old kid

@@ -37,6 +37,7 @@ public class KidsController : MonoBehaviour
 
     static public void KidInvisible(int kidId)
     {
+        GameObject.Find("Scoreboard").GetComponent<ScoreBoard>().KidHasLeft();
         instance.KidsAliveIndex.Remove(kidId);
         // TODO: check whether all kidsGO invisible
         KidStore.KidReturn(kidId);
