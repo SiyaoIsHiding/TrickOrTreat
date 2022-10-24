@@ -29,7 +29,14 @@ public class KidsController : MonoBehaviour
 
     static public void Spray()
     {
+<<<<<<< Updated upstream
         
+=======
+        // Only one now
+        Kid kid = KidStore.allKids[instance.KidsAliveIndex[0]];
+        kid.Sprayed = true;
+        KidStore.Spray(kid.id);
+>>>>>>> Stashed changes
     }
 
     static public void KidInvisible(int kidId)

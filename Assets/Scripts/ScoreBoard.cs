@@ -17,6 +17,9 @@ public class ScoreBoard : MonoBehaviour
     public TextMeshProUGUI kidCountText;
     public TextMeshProUGUI candyCountText;
 
+    [Space(10)]
+    public GameOver gameober;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +67,7 @@ public class ScoreBoard : MonoBehaviour
 
         Kid kid = KidsController.WhoAreComing()[0];
 
-        if (kid.NumCandyHolding == 1 || !kid.ShownUp)
+        if (kid.NumCandyHolding == 1 && !kid.ShownUp)
         {
             if (kid.Sprayed)
             {
@@ -76,7 +79,7 @@ public class ScoreBoard : MonoBehaviour
                 IncreaseKidCounter(1);
             }
         }
-        else if (kid.NumCandyHolding > 1 || !kid.ShownUp)
+        else if (kid.NumCandyHolding > 1 || kid.ShownUp)
         {
             if (!kid.Sprayed)
             {
@@ -84,8 +87,14 @@ public class ScoreBoard : MonoBehaviour
             }
             else
             {
-                //nothing
+                Debug.Log("success");
             }
+        }
+
+        if (candyCounter <= 0)
+        {
+            Time.timeScale = 0;
+            gameober.Gameover();
         }
 
     }
