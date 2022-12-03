@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fa0350b9-b1dc-4acf-9adc-d079d388113e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TrickOrTreat/.idea/shelf/Uncommitted_changes_before_Merge_at_23_10_2022,_5_31_pm_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TrickOrTreat/.idea/shelf/Uncommitted_changes_before_Merge_at_23_10_2022__5_31_pm__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.TrickOrTreat/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.TrickOrTreat/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/test scene (skylar).unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/test scene (skylar).unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/KidStore.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/KidStore.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Singleton.cs" afterDir="false" />
-    </list>
+    <list default="true" id="fa0350b9-b1dc-4acf-9adc-d079d388113e" name="Changes" comment="Fixed the bug of sprayed kids coming back" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +13,9 @@
         <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///Volumes/disk2/Users/jane/Documents/UnityProjects/TrickOrTreat/Assets/Scripts/KidStore.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -103,7 +99,7 @@
       <workItem from="1666567048724" duration="2858000" />
       <workItem from="1666571012964" duration="1909000" />
       <workItem from="1666588812786" duration="3560000" />
-      <workItem from="1670053191754" duration="2165000" />
+      <workItem from="1670053191754" duration="2508000" />
     </task>
     <task id="LOCAL-00001" summary="Kid">
       <created>1666412048578</created>
@@ -175,7 +171,14 @@
       <option name="project" value="LOCAL" />
       <updated>1666592626839</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Fixed the bug of sprayed kids coming back">
+      <created>1670056848667</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1670056848667</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -208,6 +211,7 @@
     <MESSAGE value="Project settings" />
     <MESSAGE value="Score, sprayed earlier" />
     <MESSAGE value="Finish" />
-    <option name="LAST_COMMIT_MESSAGE" value="Finish" />
+    <MESSAGE value="Fixed the bug of sprayed kids coming back" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed the bug of sprayed kids coming back" />
   </component>
 </project>
