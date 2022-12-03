@@ -31,7 +31,10 @@ public class KidStore
         int j;
         if (oldKids.Count == 0 && newKids.Count == 0)
         {
-            throw new Exception("No Kids are coming. Game ends.");
+            Debug.Log("No Kids are coming. Game ends.");
+            GameObject scoreBoard  = GameObject.Find("Scoreboard");
+            scoreBoard.GetComponent<ScoreBoard>().gameOver.Gameover();
+            return new []{0};
             // TODO: Notify Skylar Game Ends
         }else if (oldKids.Count == 0)
         {
@@ -48,7 +51,6 @@ public class KidStore
         {
             // both old kids and new kids existing
             i = UnityEngine.Random.Range(0f, 1f);
-            Debug.Log(i);
             if (i > newKidProb)
             {
                 // old kid
@@ -99,10 +101,14 @@ public class KidStore
         if (kid.ShownUp)
         {
             oldKids.Remove(kid);
+            Debug.Log("Remove old kid index: " + kidIndex);
+            
         }
         else
         {
             newKids.Remove(kid);
+            Debug.Log("Remove new kid index: " + kidIndex);
+            kid.ShownUp = true;
         }
         
     }
